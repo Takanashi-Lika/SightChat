@@ -49,8 +49,8 @@ python -m sightchat.app --camera
 
 本项目复用了本人旧项目中的部分设计思想，并进行了精简重构：
 
-- 摄像头打开方式参考旧项目 `medical_robot_cv_system/main.py` 中的 OpenCV 摄像头后端选择逻辑。
-- 本地/云端双架构参考旧项目 `medical_robot_cv_system/services/decision_service.py` 的世界状态聚合、规则回退、云端 LLM 调用思想。
+- 摄像头打开方式参考旧项目中的 OpenCV 摄像头后端选择逻辑。
+- 本地/云端双架构参考旧项目的世界状态聚合、规则回退、云端 LLM 调用思想。
 
 ## 设计文档
 
