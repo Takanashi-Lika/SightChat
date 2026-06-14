@@ -53,7 +53,14 @@ def main() -> None:
     parser.add_argument("--screen-screenshot", action="store_true")
     parser.add_argument("--interactive", action="store_true")
     parser.add_argument("--speak", action="store_true")
+    parser.add_argument("--ui", action="store_true")
     args = parser.parse_args()
+
+    if args.ui:
+        from sightchat.ui_tk import run_ui
+
+        run_ui()
+        return
 
     service = build_service()
     if args.camera:
