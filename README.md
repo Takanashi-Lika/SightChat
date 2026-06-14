@@ -65,9 +65,9 @@ python -m sightchat.app --ui
 
 ## Demo 视频
 
-待录制后补充可访问链接。
+(https://pan.quark.cn/s/6a12bdb265dd)
 
-录屏建议见 [DEMO.md](DEMO.md)。提交前请将视频上传到 bilibili、云盘等可访问平台，并把链接替换到本节。
+录屏如上
 
 ## 持续交付记录
 
