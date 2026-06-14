@@ -21,12 +21,17 @@ pip install -r requirements.txt
 python -m sightchat.app --text "你现在看到了什么？"
 ```
 
-如需启用云端模型，请复制 `.env.example` 为 `.env`，填入密钥，并设置：
+如需启用云端模型，请复制 `.env.example` 为 `.env`，填入本机密钥。项目支持 OpenAI-compatible API，例如 DeepSeek：
 
 ```text
 SIGHTCHAT_ENABLE_CLOUD=true
-SIGHTCHAT_LLM_PROVIDER=openai_compatible
+SIGHTCHAT_LLM_PROVIDER=deepseek
+SIGHTCHAT_OPENAI_BASE_URL=https://api.deepseek.com/v1
+SIGHTCHAT_OPENAI_API_KEY=你的本地密钥
+SIGHTCHAT_OPENAI_MODEL=deepseek-chat
 ```
+
+不要把 `.env` 或 API Key 提交到仓库；`.env` 已在 `.gitignore` 中忽略。
 
 ## 运行模式
 
