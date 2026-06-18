@@ -37,10 +37,20 @@ def capture_context(service: DecisionService) -> None:
     service.observe(summary.to_dict())
 
 
+def capture_screen_context(service: DecisionService, include_screenshot: bool = False) -> None:
+    from sightchat.screen import ScreenEventAdapter
+
+    observation = ScreenEventAdapter().capture_once(include_screenshot=include_screenshot)
+    service.observe(observation.to_dict())
+    print(observation.to_dict())
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="sightchat")
     parser.add_argument("--text", default="你现在看到了什么？")
     parser.add_argument("--camera", action="store_true")
+    parser.add_argument("--screen", action="store_true")
+    parser.add_argument("--screen-screenshot", action="store_true")
     parser.add_argument("--interactive", action="store_true")
     parser.add_argument("--speak", action="store_true")
     parser.add_argument("--ui", action="store_true")
@@ -55,6 +65,8 @@ def main() -> None:
     service = build_service()
     if args.camera:
         capture_context(service)
+    if args.screen:
+        capture_screen_context(service, include_screenshot=args.screen_screenshot)
     tts = TextToSpeech(enabled=args.speak)
 
     if args.interactive:
